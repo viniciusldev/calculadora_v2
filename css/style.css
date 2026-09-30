@@ -1,0 +1,195 @@
+/* geral */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #e9ecef;
+    color: #212529;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-bs-theme="dark"] body {
+    background-color: #212529;
+}
+
+/* área principal */
+
+.calculadora-container {
+    margin-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+.calculadora-container h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+/* cards */
+
+.card {
+    background-color: #e9ecef;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+}
+
+[data-bs-theme="dark"] .card {
+    background-color: #212529;
+}
+
+.calculadora-coluna {
+    width: 100%;
+    max-width: 520px;
+}
+
+#calculadora .card-body,
+.desafio-card .card-body {
+    padding: 1.5rem;
+}
+
+/* visor */
+
+#visor {
+    height: 78px;
+    font-size: 2rem;
+    padding-inline: 1rem;
+    border-radius: 10px;
+}
+
+/* botões calculadora */
+
+.btn-calculadora {
+    min-height: 62px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+#btn-desafio {
+    min-height: 56px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+}
+
+/* easter eggs */
+
+.easter-egg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #000;
+}
+
+.easter-egg video {
+    display: block;
+    width: 100%;
+    max-height: 260px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.easter-egg.mostrar-easter-egg video {
+    animation: zoomLeve 0.5s ease-out;
+}
+
+@keyframes zoomLeve {
+    0% {
+        transform: scale(0.88);
+        opacity: 0;
+    }
+
+    65% {
+        transform: scale(1.035);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* desafio */
+
+.desafio-card {
+    border-radius: 14px;
+}
+
+.contador-questao {
+    color: #6c757d;
+}
+
+[data-bs-theme="dark"] .contador-questao {
+    color: #adb5bd;
+}
+
+.pergunta-desafio {
+    margin: 1.5rem 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+#resposta {
+    min-height: 50px;
+    font-size: 1.15rem;
+}
+
+.feedback {
+    min-height: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* cronometro */
+
+.progress {
+    height: 14px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+#barra-tempo {
+    transition: width 1s linear, background-color 0.25s ease;
+}
+
+/* responsividade */
+
+@media (max-width: 768px) {
+    .calculadora-container {
+        margin-top: 1rem;
+    }
+
+    .calculadora-container h1 {
+        font-size: 2.3rem;
+    }
+
+    .calculadora-coluna {
+        max-width: 100%;
+    }
+
+    #calculadora .card-body,
+    .desafio-card .card-body {
+        padding: 1rem;
+    }
+
+    #visor {
+        height: 68px;
+        font-size: 1.7rem;
+    }
+
+    .btn-calculadora {
+        min-height: 54px;
+        font-size: 1.05rem;
+    }
+
+    .pergunta-desafio {
+        font-size: 1.55rem;
+    }
+}
