@@ -1,14 +1,11 @@
 /* calculadora */
-
 const visor = document.getElementById('visor');
 const calculadora = document.getElementById('calculadora');
 const botoesCalculadora = calculadora.querySelectorAll('.btn-calculadora');
 
 visor.value = '0';
 
-
 /* easter eggs */
-
 const areaEasterEgg = document.getElementById('easter-egg');
 const videoEasterEgg = document.getElementById('easter-egg-video');
 const somEasterEgg = document.getElementById('som-easter-egg');
@@ -76,15 +73,13 @@ function mostrarEasterEgg(resultado) {
     videoEasterEgg.play().catch(() => {});
     somEasterEgg.play().catch(() => {});
 
-    // O Easter egg fica visível por 5 segundos.
+    // O easter egg fica visível por 5 segundos.
     timeoutEasterEgg = setTimeout(() => {
         esconderEasterEgg();
     }, 5000);
 }
 
-
-/* Botões da calculadora */
-
+/* botões da calculadora */
 botoesCalculadora.forEach((botao) => {
     botao.addEventListener('click', () => {
         const valorBotao = botao.innerText.trim();
@@ -109,7 +104,7 @@ botoesCalculadora.forEach((botao) => {
             return;
         }
 
-        // Calcula o resultado.
+        // calcula o resultado.
         if (valorBotao === '=') {
             try {
                 const expressao = visor.value.replace(/\s/g, '');
@@ -156,9 +151,7 @@ botoesCalculadora.forEach((botao) => {
     });
 });
 
-
 /* modo desafio */
-
 const desafios = [
     { pergunta: 'Qual é a soma de 27 + 45?', resposta: 72 },
     { pergunta: 'Quanto é 120 - 37?', resposta: 83 },
@@ -177,7 +170,6 @@ let desafioAtivo = false;
 
 
 /* elementos do desafio */
-
 const btnDesafio = document.getElementById('btn-desafio');
 const btnSair = document.getElementById('btn-sair');
 const btnJogarNovamente = document.getElementById('btn-jogar-novamente');
@@ -205,7 +197,6 @@ totalQuestoes.innerText = desafios.length;
 
 
 /* cronometro */
-
 function atualizarTempoNaTela() {
     tempo.innerText = `${segundosRestantes}s`;
 
@@ -253,9 +244,7 @@ function iniciarCronometro() {
     }, 1000);
 }
 
-
 /* fluxo desafio */
-
 function mostrarQuestao() {
     desafioAtivo = true;
 
@@ -394,10 +383,7 @@ function sairDoDesafio() {
 }
 
 
-/* ========================================
-   RESPOSTA DO USUÁRIO
-======================================== */
-
+/* resposta do usuário */
 formDesafio.addEventListener('submit', (evento) => {
     evento.preventDefault();
 
@@ -421,27 +407,22 @@ formDesafio.addEventListener('submit', (evento) => {
 
         feedback.innerHTML = '<span class="text-success fw-semibold">Resposta correta!</span>';
 
-        // Acertou: segue automaticamente para a próxima questão.
+        // acertou: segue automaticamente para a próxima questão.
         setTimeout(() => {
             proximaQuestao();
         }, 700);
 
     } else {
-        // Errou: o desafio termina imediatamente.
+        // errou: o desafio termina imediatamente.
         encerrarPorErro();
     }
 });
-
 
 btnDesafio.addEventListener('click', iniciarDesafio);
 btnSair.addEventListener('click', sairDoDesafio);
 btnJogarNovamente.addEventListener('click', iniciarDesafio);
 
-
-/* ========================================
-   TEMA CLARO / ESCURO
-======================================== */
-
+/* temas */
 const btnTema = document.getElementById('btn-tema');
 
 btnTema.addEventListener('click', () => {

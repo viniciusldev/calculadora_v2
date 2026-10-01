@@ -27,6 +27,10 @@ body {
     font-weight: 700;
 }
 
+[data-bs-theme="dark"] .calculadora-container h1 {
+    color: #f8f9fa;
+}
+
 /* cards */
 
 .card {
